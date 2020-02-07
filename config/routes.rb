@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :systems
+  resources :systems do 
+    resources :incidents
+  end
   devise_for :admins, controllers: { registrations: 'admins/registrations',
                                     sessions: 'admins/sessions', unlocks: 'admins/unlocks',
                                     passwords: 'admins/passwords', confirmations: 'admins/confirmations'}
