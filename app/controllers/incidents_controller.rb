@@ -25,12 +25,13 @@ class IncidentsController < ApplicationController
   # POST /incidents
   # POST /incidents.json
   def create
+    puts "_______________________________________________"
     @incident = current_admin.systems.find(params[:system_id]).incidents.new(incident_params)
-
+    puts @incident
     respond_to do |format|
       if @incident.save
-        format.html { redirect_to @incident, notice: 'Incident was successfully created.' }
-        format.json { render :show, status: :created, location: @incident }
+        format.html { redirect_to [@incident.system, @incident], notice: 'Incident was successfully created.' }
+        format.json { render :show, status: :created, location: [@incident.system, @incident] }
       else
         format.html { render :new }
         format.json { render json: @incident.errors, status: :unprocessable_entity }
@@ -43,8 +44,8 @@ class IncidentsController < ApplicationController
   def update
     respond_to do |format|
       if @incident.update(incident_params)
-        format.html { redirect_to @incident, notice: 'Incident was successfully updated.' }
-        format.json { render :show, status: :ok, location: @incident }
+        format.html { redirect_to [@incident.system, @incident], notice: 'Incident was successfully updated.' }
+        format.json { render :show, status: :ok, location: [@incident.system, @incident] }
       else
         format.html { render :edit }
         format.json { render json: @incident.errors, status: :unprocessable_entity }
@@ -57,7 +58,7 @@ class IncidentsController < ApplicationController
   def destroy
     @incident.destroy
     respond_to do |format|
-      format.html { redirect_to incidents_url, notice: 'Incident was successfully destroyed.' }
+      format.html { redirect_to system_incidents_path(@incident.system), notice: 'Incident was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
