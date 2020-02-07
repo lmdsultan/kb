@@ -1,4 +1,4 @@
 class Incident < ApplicationRecord
   belongs_to :system
-  belongs_to :admin
+  delegate :admin, :to => :system
 end
