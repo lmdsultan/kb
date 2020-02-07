@@ -1,4 +1,4 @@
-<%= form_with(model: incident, local: true) do |form| %>
+<%= form_with(model: [incident.system, incident], local: true) do |form| %>
   <% if incident.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(incident.errors.count, "error") %> prohibited this incident from being saved:</h2>

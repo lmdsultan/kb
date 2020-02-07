@@ -2,4 +2,4 @@
 
 <%= render 'form', incident: @incident %>
 
-<%= link_to 'Back', incidents_path %>
+<%= link_to 'Back', system_incidents_path(@incident.system) %>

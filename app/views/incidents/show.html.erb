@@ -10,5 +10,5 @@
   <%= @incident.solution %>
 </p>
 
-<%= link_to 'Edit', edit_incident_path(@incident) %> |
-<%= link_to 'Back', incidents_path %>
+<%= link_to 'Edit', edit_system_incident_path(@incident.system, @incident) %> |
+<%= link_to 'Back', system_incidents_path(@incident.system) %>
