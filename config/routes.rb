@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  resources :bases, only: [:index, :show]
+  get "bases/:system_id/:id", to: "bases#details", as: "solve"
   resources :systems do 
     resources :incidents
   end
