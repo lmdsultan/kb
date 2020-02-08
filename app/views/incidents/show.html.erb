@@ -10,5 +10,10 @@
   <%= @incident.solution %>
 </p>
 
+<% if @incident.solve.attached? %>
+  <iframe src="<%=(url_for(@incident.solve))%>">
+<% end %>
+
+
 <%= link_to 'Edit', edit_system_incident_path(@incident.system, @incident) %> |
 <%= link_to 'Back', system_incidents_path(@incident.system) %>
