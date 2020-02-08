@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Incidents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Issue</th>
+      <th>Solution</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incidents.each do |incident| %>
+      <tr>
+        <td><%= incident.issue %></td>
+        <td><%= incident.solution %></td>
+        <td><%= link_to 'Show', solve_path(incident.system, incident) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
