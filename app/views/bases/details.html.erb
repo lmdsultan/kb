@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @incident.issue %>
+</p>
+
+<p>
+  <strong>Solution:</strong>
+  <%= @incident.solution %>
+</p>
+
+<% if @incident.solve.attached? %>
+  <iframe src="<%=(url_for(@incident.solve))%>">
+<% end %>
+
+
+<%= link_to 'Back', basis_path(@incident.system) %>

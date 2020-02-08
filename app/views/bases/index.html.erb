@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Systems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @systems.each do |system| %>
+      <tr>
+        <td><%= system.name %></td>
+        <td><%= link_to 'Show', basis_path(system) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
