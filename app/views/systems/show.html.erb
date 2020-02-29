@@ -5,6 +5,6 @@
   <%= @system.name %>
 </p>
 
-
+<%= link_to 'New Incident', new_system_incident_path(@system) %> |
 <%= link_to 'Edit', edit_system_path(@system) %> |
 <%= link_to 'Back', systems_path %>
