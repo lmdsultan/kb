@@ -4,35 +4,37 @@
     <title>Kb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+      <%if(user_signed_in? )%>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
 
-  <body class="<%= controller_name %> <%= action_name %>">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-    <%if(user_signed_in? )%> 
-    <label class = "navbar-item mx-auto order-0"> Welcome <%= current_user.name   %></label>
-    <ul class="navbar-nav ml-auto">
+    <label class = "navbar-item mx-auto order-0 navbar-itemt"> Welcome <%= current_user.name   %></label>
+   <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-       <%= link_to "|   Sign out  |", destroy_user_session_path, method: :delete , :class=> "text-light "%>  | 
+       <%= link_to "|   Sign vecwxsout  ", destroy_user_session_path, method: :delete , :class=> "text-light "%>  
       </li>
       <li class="nav-item">
-           <%= link_to "|  My account  |", edit_user_registration_path, :class=> "text-light " %>
+           <%= link_to " |  My account  ", edit_user_registration_path, :class=> "text-light " %>
       </li>
     </ul>
-    <%end %>
+    </div>
+    </nav>
+<%end%>
+
         <%if(admin_signed_in? )%> 
     <label class = "navbar-item mx-auto order-0"> Welcome <%= current_admin.name   %></label>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-       <%= link_to "|   Sign out  |", destroy_admin_session_path, method: :delete , :class=> "text-light "%>  | 
+       <%= link_to "|   Sign out  ", destroy_admin_session_path, method: :delete , :class=> "text-light "%>  
       </li>
       <li class="nav-item">
-           <%= link_to "|  My account  |", edit_admin_registration_path, :class=> "text-light " %>
+           <%= link_to "|  My account  ", edit_admin_registration_path, :class=> "text-light " %>
       </li>
     </ul>
     <%end %>

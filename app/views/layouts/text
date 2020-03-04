@@ -1,0 +1,47 @@
+        <%if(admin_signed_in?)%> 
+    <label class = "navbar-item mx-auto order-0"> Welcome <%= current_admin.name   %></label>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+       <%= link_to "|   Sign out  |", destroy_admin_session_path, method: :delete , :class=> "text-light "%>  | 
+      </li>
+      <li class="nav-item">
+           <%= link_to "|  My account  |", edit_admin_registration_path, :class=> "text-light " %>
+      </li>
+    </ul>
+    <%end %>
+
+
+      <body class="<%= controller_name %> <%= action_name %>">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+
+      <%# <a class="navbar-brand" href="#">Start Bootstrap</a> %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+       <%= link_to " Sign out |   " , destroy_user_session_path, method: :delete , :class=> "text-light "%>  
+          <%# <a class="nav-link" href="#">XXXX </a> %>
+          </li>
+          <li class="nav-item ">
+           <%= link_to "      |  My account  ", edit_user_registration_path, :class=> "text-light " %>
+  
+            <%# <a class="nav-link" href="#">Update User Info</a> %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+    def only_see_own_incidnt
+    @admin = admin.find(params[:id])
+  
+    if current_admin != @admin
+      redirect_to root_path, notice: "Sorry, but you are only allowed to view your own profile page."
+    end
+  end

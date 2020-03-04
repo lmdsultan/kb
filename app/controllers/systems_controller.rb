@@ -2,6 +2,8 @@ class SystemsController < ApplicationController
   before_action :authenticate_admin!
   before_action :set_system, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /systems
   # GET /systems.json
   def index
@@ -11,6 +13,7 @@ class SystemsController < ApplicationController
   # GET /systems/1
   # GET /systems/1.json
   def show
+
   end
 
   # GET /systems/new
@@ -60,6 +63,18 @@ class SystemsController < ApplicationController
       format.html { redirect_to systems_url, notice: 'System was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def index
+    @systems = current_admin.systems
+  end
+
+  def show
+    @incidents = System.find(params[:id]).incidents
+  end
+
+  def details
+    @incident = System.find(params[:system_id]).incidents.find(params[:id])
   end
 
   private

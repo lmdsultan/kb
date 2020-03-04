@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_system_incident_path(@incident.system, @incident) %> |
+<%= link_to 'Back', system_incidents_path(@incident.system) %>
+
 <p>
   <strong>Issue:</strong>
   <%= @incident.issue %>
@@ -15,5 +18,4 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_system_incident_path(@incident.system, @incident) %> |
-<%= link_to 'Back', system_incidents_path(@incident.system) %>
+

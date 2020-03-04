@@ -1,10 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Name:</strong>
   <%= @system.name %>
 </p>
 
-<%= link_to 'New Incident', new_system_incident_path(@system) %> |
-<%= link_to 'Edit', edit_system_path(@system) %> |
-<%= link_to 'Back', systems_path %>
+
+<table id="t01">
+  <thead>
+    <tr>
+      <th>Issue</th>
+      <th>Solution</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <div class="btn-group">
+  <tbody>
+
+    <% @incidents.each do |incident| %>
+      <tr>
+        <td><%= incident.issue %></td>
+        <td><%= incident.solution %></td>
+        <td><%= link_to 'Show', [incident.system, incident],  :class => "btn" %></td>
+        <td><%= link_to 'Edit', edit_system_incident_path(incident.system, incident),  :class => "btn" %></td>
+        <td><%= link_to 'Destroy', [incident.system, incident], method: :delete, data: { confirm: 'Are you sure?' } ,  :class => "btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Incident', new_system_incident_path(@system) , :class => "btn" %> |
+<%= link_to 'Edit', edit_system_path(@system) , :class => "btn" %> |
+<%= link_to 'Back', systems_path , :class => "btn" %>
+</div>

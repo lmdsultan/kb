@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :issue %>
-    <%= form.text_field :issue %>
+    <%= form.text_field :issue, {:required => true} %>
   </div>
 
   <div class="field">
     <%= form.label :solution %>
-    <%= form.text_area :solution %>
+    <%= form.text_area :solution, {:required => true} %>
   </div>
 
   <div class="field">
     <%= form.label :solve %>
-    <%= form.file_field :solve %>
+    <%= form.file_field :solve, {:required => true} %>
   </div>
 
   <div class="actions">

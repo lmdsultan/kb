@@ -14,7 +14,7 @@
     <% @systems.each do |system| %>
       <tr>
         <td><%= system.name %></td>
-        <td><%= link_to 'Show', basis_path(system) %></td>
+        <td><%= link_to 'All incidents', basis_path(system) %></td>
       </tr>
     <% end %>
   </tbody>

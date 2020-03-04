@@ -1,15 +1,135 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+/* body.html.front.logged-in.no-sidebars.page-node.page-node-.page-node-112.node-type-page.toolbar.toolbar-drawer {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f3f3f1;
+
+} */
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+html,
+body {
+  height: 100%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin:auto;
+  padding:63px;
+  text-align:center;
+}
+.btn-outline-secondary{
+    width: 300px;
+}
+.row {
+    
+    color: gray;
+    padding: 5px;
+    margin: 2;
+    font: bold 12px sans-serif;
+    display: inline-block;
+  }
+  .text-light {
+    color: black!important;
+}
+nav{
+    background-color: red;
+    padding: 5px;
+    margin: 2;
+    font: bold 12px sans-serif;
+    display: inline-block;
+    width: 100%;
+}
+table {
+  width:100%;
+}
+table, th, td {
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: #4f008c;
+  color: white;
+}
+iframe{
+    width: 1000px;
+    height: 1000px;
+}
+.btn-outline{
+    background-color: #f9385e;
+    width: 110px;
+}
+.navbar-custom {
+    padding-bottom: 1rem;
+    background-color: #f9385e;
+    padding: 10px;
+  }
+  
+  .navbar-custom .navbar-brand {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+  }
+  
+  .navbar-custom .navbar-nav .nav-item .nav-link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+  }
+  .navbar-itemt{
+      color: white;
+  }
+  button, .btn {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 15px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: auto;
+
+    }
+    button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+    button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    }
+    button:hover {
+    background-color: #f7c2f9;
+    }
+    button:hover span {
+    padding-right: 25px;
+    }
+    button:hover span:after {
+    opacity: 1;
+    right: 0;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+    }
