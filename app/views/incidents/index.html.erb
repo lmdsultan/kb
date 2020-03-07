@@ -11,7 +11,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody >
     <% @incidents.each do |incident| %>
       <tr>
         <td><%= incident.issue %></td>
@@ -26,6 +26,6 @@
   </tbody>
 </table>
 
-<br>
+<br><br>
 
-<%= link_to 'New Incident', new_system_incident_path(params[:system_id]) %>
+<%= link_to 'New Incident', new_system_incident_path(params[:system_id]) , :class => "spaceme"%>

@@ -7,7 +7,6 @@
 
 } */
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
-html,
 body {
   height: 100%;
   display: inline-block;
@@ -90,7 +89,7 @@ iframe{
   .navbar-itemt{
       color: white;
   }
-  button, .btn {
+   button, .btn {
     display: inline-block;
     background-color: #7b38d8;
     border-radius: 15px;
@@ -99,7 +98,7 @@ iframe{
     text-align: center;
     font-size: 18px;
     padding: 5px;
-    width: 150px;
+    width: 300px;
     transition: all 0.5s;
     cursor: pointer;
     margin-left: auto;
@@ -132,4 +131,11 @@ iframe{
     a{
       color: white;
       text-decoration: none;
+    }
+    table#t01 th {
+      background-color: #4f008c;
+      color: white;
+      border-radius: 30px;
+      width: 100%;
+      text-align: center;
     }
