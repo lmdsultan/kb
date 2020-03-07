@@ -45,3 +45,11 @@
       redirect_to root_path, notice: "Sorry, but you are only allowed to view your own profile page."
     end
   end
+
+
+  margin:auto;
+  padding:63px;
+  
+  display: inline-block;
+  justify-content: center;
+  align-items: center;

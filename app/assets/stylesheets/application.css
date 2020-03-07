@@ -9,19 +9,20 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
 body {
   height: 100%;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  margin:auto;
-  padding:63px;
-  text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 85%;
 }
+
+
 .btn-outline-secondary{
-    width: 300px;
-}
+    width: auto;
+  }
 .row {
-    
     color: gray;
     padding: 5px;
     margin: 2;
@@ -30,14 +31,6 @@ body {
   }
   .text-light {
     color: black!important;
-}
-nav{
-    background-color: red;
-    padding: 5px;
-    margin: 2;
-    font: bold 12px sans-serif;
-    display: inline-block;
-    width: 100%;
 }
 table {
   width:100%;
@@ -49,15 +42,19 @@ th, td {
   padding: 15px;
   text-align: left;
 }
-table#t01 tr:nth-child(even) {
+/* table#t01  */
+tr:nth-child(even) {
   background-color: #eee;
 }
-table#t01 tr:nth-child(odd) {
+/* table#t01 */
+tr:nth-child(odd) {
  background-color: #fff;
 }
-table#t01 th {
+/* table#t01  */
+th {
   background-color: #4f008c;
   color: white;
+  width: auto;
 }
 iframe{
     width: 1000px;
@@ -67,28 +64,9 @@ iframe{
     background-color: #f9385e;
     width: 110px;
 }
-.navbar-custom {
-    padding-bottom: 1rem;
-    background-color: #f9385e;
-    padding: 10px;
-  }
-  
-  .navbar-custom .navbar-brand {
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    font-weight: 700;
-  }
-  
-  .navbar-custom .navbar-nav .nav-item .nav-link {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-  }
-  .navbar-itemt{
-      color: white;
-  }
+.bg-inverse{
+  background-color: #7b38d8 !important;
+}
    button, .btn {
     display: inline-block;
     background-color: #7b38d8;
@@ -132,10 +110,6 @@ iframe{
       color: white;
       text-decoration: none;
     }
-    table#t01 th {
-      background-color: #4f008c;
+    label, .witi{
       color: white;
-      border-radius: 30px;
-      width: 100%;
-      text-align: center;
     }

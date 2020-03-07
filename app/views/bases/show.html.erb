@@ -16,7 +16,7 @@
       <tr>
         <td><%= incident.issue %></td>
         <td><%= incident.solution %></td>
-        <td><%= link_to 'Show', solve_path(incident.system, incident) %></td>
+        <td><%= link_to 'Attached solution', solve_path(incident.system, incident) , :class => "btn" %></td>
       </tr>
     <% end %>
 
